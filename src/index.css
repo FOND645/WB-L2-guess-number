@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+}
+
+.control-pannel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.diapazon-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    justify-content: space-between;
+}
+
+.button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 4rem;
+    background-color: ghostwhite;
+    border-radius: 5px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}

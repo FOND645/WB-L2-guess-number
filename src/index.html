@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="game-container">
+        <p class="hint" id="result"></p>
+        <input type="number" id="answer">
+        <p class="hint" >Неверно: <span id="wrong-answers"></span></p>
+        <p class="hint">Делится на <span id="dividers"></span></p>
+        <p class="button" id="guess-button">Угадал?</p>
+    </div>
+    <div class="control-pannel">
+        <div class="diapazon-container">
+            <div class="input-container">
+                <label for="min-diapazon">Минимум</label>
+                <input type="number" name="min-diapazon" id="min-diapazon" value="0">
+            </div>
+            <div class="input-container">
+                <label for="max-diapazon">Максимум</label>
+                <input type="number" name="max-diapazon" id="max-diapazon" value="100">
+            </div>
+        </div>
+        <p>Попыток: <span id="try-counter">0</span></p>
+        <p class="button" id="start-button">
+            Загадай число
+        </p>
+
+    </div>
+</body>
+
+</html>
