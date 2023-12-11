@@ -39,5 +39,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 220px;
     gap: 8px;
+}
+
+.hint {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

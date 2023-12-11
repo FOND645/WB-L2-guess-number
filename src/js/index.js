@@ -13,12 +13,15 @@ class Game {
 
         this.answerInput = document.getElementById('answer')
         this.answerInput.addEventListener('input', this.inputValidator)
+        this.answerInput.disabled = true
 
         this.startButtonElement = document.getElementById('start-button')
         this.startButtonElement.addEventListener('click', () => this.startGame())
 
         this.guessButtonElement = document.getElementById('guess-button')
         this.guessButtonElement.addEventListener('click', () => this.checkNumber())
+        this.guessButtonElement.style.cursor = 'not-allowed'
+        this.guessButtonElement.style.color = 'gray'
 
         this.dividers = []
         this.targetNumber = undefined
@@ -41,9 +44,13 @@ class Game {
         this.dividers = this.getDividers()
         this.attempts = 0
 
-        this.wrongAnswersElement.innerHTML = ''
+        this.wrongAnswersElement.innerHTML = 'Неверно: '
 
         this.isGameStart = true
+        
+        this.answerInput.disabled = false
+        this.guessButtonElement.style.cursor = 'pointer'
+        this.guessButtonElement.style.color = 'black'
     }
 
     getDividers() {
@@ -64,11 +71,9 @@ class Game {
         if (answer === this.targetNumber) {
             this.resultElemnet.innerText = 'ВЕРНО!'
             this.isGameStart = false
-
         } else {
             this.resultElemnet.innerText = answer > this.targetNumber ? "Вводи меньше" : "Вводи больше"
-            if ((this.attempts + 1) % 3 === 0) {
-                console.log('draw hint')
+            if ((this.attempts) % 3 === 0) {
                 const hint = this.dividers.slice(0,(this.attempts + 1) / 3).join(", ")
                 this.dividersHintsElement.innerText = hint
             }
